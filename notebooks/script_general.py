@@ -74,7 +74,7 @@ mysql_password = "password"
 mysql_host = "127.0.0.1"
 mysql_port = "3306"
 mysql_db = "testdb"
-table_name = "mi_tabla"
+table_name = "Netflix"
 
 engine = create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}:{mysql_port}/{mysql_db}")
 
@@ -174,9 +174,9 @@ for test_key in r.keys():
     print(test_key.decode(), "→", r.get(test_key).decode())
     
 engine = create_engine(f"mysql+mysqlconnector://{mysql_user}:{mysql_password}@{mysql_host}:{mysql_port}/{mysql_db}")
-df = pd.read_sql(text("SELECT * FROM mi_tabla"), con=engine)
+df = pd.read_sql(text("SELECT * FROM Netflix"), con=engine)
 
-table_name = "mi_tabla"
+table_name = "Netflix"
 
 with engine.connect() as conn:
     # Contar filas
@@ -199,7 +199,7 @@ mongo_port = "27017"
 mongo_client = MongoClient(f"mongodb://{mongo_user}:{mongo_password}@{mongo_host}:{mongo_port}/")
 
 mongo_dns = mongo_client["testdb"]
-mongo_collection = mongo_dns["mi_tabla"]
+mongo_collection = mongo_dns["Netflix"]
 mongo_collection.insert_many(df.to_dict('records'))
 
 
