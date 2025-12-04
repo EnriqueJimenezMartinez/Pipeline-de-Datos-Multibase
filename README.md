@@ -46,6 +46,8 @@ Librerías:
 
 * sqlalchemy
 
+* matplotlib.pyplot
+
 
 ### Notebook 2 — Lectura desde MySQL e inserción en Cassandra
 
