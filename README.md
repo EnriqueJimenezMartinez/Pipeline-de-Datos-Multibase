@@ -73,6 +73,8 @@ Librerías:
 
 * cassandra.query
 
+* matplotlib.pyplot
+
 
 ### Notebook 3 — Exportación de columnas de Cassandra a Redis
 
